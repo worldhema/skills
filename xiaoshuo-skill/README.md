@@ -29,7 +29,7 @@ rm -rf .git && git init -b main
 
 新目录里清空 `01/02/03` 下的模板内容，再启动 Claude Code 初始化。
 
-## 9 技能速查
+## 10 技能速查
 
 | 技能 | 位置 | 职责 |
 |------|------|------|
@@ -37,13 +37,14 @@ rm -rf .git && git init -b main
 | 子1 资料整理 | `.claude/skills/novel-prep/` | 前文/人物状态/伏笔梳理 |
 | 子2 剧情推演 | `.claude/skills/novel-outline/` | 本章冲突与转折规划 |
 | 子3 正文生成 | `.claude/skills/novel-write/` | 约 2000 字去 AI 味正文 |
-| 子4 合规审查 | `.claude/skills/novel-review/` | OOC/矛盾/违禁检查 |
+| 子4 合规审查 | `.claude/skills/novel-review/` | OOC/矛盾/违禁/张力检查 |
 | 子5 内容打磨 | `.claude/skills/novel-polish/` | 润色与钩子优化 |
 | 子6 故事线更新 | `.claude/skills/novel-track/` | 伏笔/人物状态同步 |
 | 子7 版本备份 | `.claude/skills/novel-backup/` | git 每章 commit |
+| 灵感 | `.claude/skills/novel-method/` | 冲突/英雄之旅/写作手法灵感 |
 | 自动化 | `.claude/skills/novel-scan/` | 每日备份+合规扫描 |
 
-详细规范见 `04-技能配置/`，总控制度见 `CLAUDE.md`。
+详细规范见 `04-技能配置/`（含 `创作方法论.md` 知识库），总控制度见 `CLAUDE.md`。
 
 ## 目录结构
 
