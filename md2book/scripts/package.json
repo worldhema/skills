@@ -1,0 +1,14 @@
+{
+  "name": "md2book",
+  "version": "1.0.0",
+  "description": "Markdown to professional PDF book converter",
+  "type": "module",
+  "dependencies": {
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-front-matter": "^0.2.4",
+    "markdown-it-table-of-contents": "^0.8.0",
+    "highlight.js": "^11.10.0",
+    "playwright": "^1.49.0"
+  }
+}

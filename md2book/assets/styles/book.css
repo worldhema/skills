@@ -1,0 +1,215 @@
+/* =====================================================
+   Book CSS - 书籍排版核心样式
+   @page 规则、页眉页脚、页码、分页控制
+   ===================================================== */
+
+/* ---------- 页面尺寸与边距 ---------- */
+@page {
+  size: A4;
+  margin: 25mm 20mm 25mm 20mm;
+
+  @bottom-center {
+    content: counter(page);
+    font-family: "Source Han Serif CN", "Songti SC", "SimSun", serif;
+    font-size: 9pt;
+    color: #999;
+  }
+
+  @top-left {
+    content: string(chapter-title);
+    font-family: "Heiti SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 8pt;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  @top-right {
+    content: string(book-title);
+    font-family: "Heiti SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 8pt;
+    color: #bbb;
+  }
+}
+
+/* 封面页无页眉页脚 */
+@page cover {
+  margin: 0;
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+/* 版权页无页眉 */
+@page copyright {
+  @top-left { content: none; }
+  @top-right { content: none; }
+}
+
+/* 目录页页眉简化 */
+@page toc {
+  @top-left { content: none; }
+  @top-right { content: "目录"; }
+}
+
+/* ---------- 分页控制 ---------- */
+
+/* 每个 H1 章节从新页面开始 */
+h1 {
+  string-set: chapter-title content();
+  break-before: page;
+  page-break-before: always;
+  margin-top: 40pt;
+  padding-top: 20pt;
+  border-top: 2px solid var(--accent-color, #333);
+}
+
+/* H2 不被截断 */
+h2 {
+  string-set: chapter-title content();
+  break-after: avoid;
+  page-break-after: avoid;
+  break-inside: avoid;
+}
+
+h3, h4, h5, h6 {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+/* 保护复杂元素不被跨页截断 */
+pre, code, table, figure, blockquote, .callout {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* 图片不单独留在页面底部 */
+img {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* 段落跟随标题 */
+h1 + p, h2 + p, h3 + p {
+  break-before: avoid;
+}
+
+/* ---------- 全局基础样式 ---------- */
+
+.book-container {
+  font-size: 10.5pt;
+  line-height: 1.8;
+  color: var(--text-color, #333);
+}
+
+/* ---------- 标题系统 ---------- */
+
+h1 {
+  font-size: 22pt;
+  margin-bottom: 16pt;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 16pt;
+  margin-top: 28pt;
+  margin-bottom: 12pt;
+  padding-bottom: 6pt;
+  border-bottom: 1px solid var(--border-color, #eee);
+}
+
+h3 {
+  font-size: 13pt;
+  margin-top: 20pt;
+  margin-bottom: 8pt;
+}
+
+h4 {
+  font-size: 11pt;
+  margin-top: 16pt;
+  margin-bottom: 6pt;
+}
+
+/* ---------- 正文 ---------- */
+
+p {
+  margin-bottom: 8pt;
+  text-align: justify;
+  text-justify: inter-ideograph;
+  hyphens: none;
+  text-indent: 0;
+}
+
+/* 段首缩进（可选） */
+.indent p {
+  text-indent: 2em;
+}
+
+/* ---------- 链接 ---------- */
+
+a {
+  color: var(--link-color, #2563eb);
+  text-decoration: none;
+  border-bottom: 1px solid var(--link-color, #2563eb);
+}
+
+a:hover {
+  border-bottom-style: dashed;
+}
+
+/* 打印时显示 URL */
+@media print {
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #999;
+    word-break: break-all;
+  }
+}
+
+/* ---------- 列表 ---------- */
+
+ul, ol {
+  margin: 8pt 0;
+  padding-left: 2em;
+}
+
+li {
+  margin-bottom: 4pt;
+  line-height: 1.7;
+}
+
+li > ul, li > ol {
+  margin-top: 4pt;
+  margin-bottom: 4pt;
+}
+
+/* ---------- 分割线 ---------- */
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color, #ddd);
+  margin: 24pt 0;
+}
+
+/* ---------- 强调 ---------- */
+
+strong {
+  font-weight: 700;
+  color: var(--emphasis-color, #111);
+}
+
+em {
+  font-style: italic;
+}
+
+/* ---------- 行内代码 ---------- */
+
+code:not(pre code) {
+  font-family: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
+  font-size: 0.88em;
+  background: var(--code-bg, #f5f5f5);
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: var(--code-text, #c7254e);
+}

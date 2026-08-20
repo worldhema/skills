@@ -1,0 +1,140 @@
+/* =====================================================
+   Typography CSS - 中文字体排版
+   字体栈、字号体系、行高、字间距
+   ===================================================== */
+
+/* ---------- 字体栈定义 ---------- */
+
+/* 正文衬线字体栈 */
+.serif-stack {
+  font-family: "Source Han Serif CN", "STSong", "Songti SC", "SimSun", "Noto Serif CJK SC", serif;
+}
+
+/* 标题无衬线字体栈 */
+.sans-stack {
+  font-family: "PingFang SC", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "Noto Sans CJK SC", sans-serif;
+}
+
+/* 全局字体栈（正文默认宋体风格） */
+.book-container {
+  font-family:
+    "Source Han Serif CN",
+    "STSong",
+    "Songti SC",
+    "SimSun",
+    "Noto Serif CJK SC",
+    serif;
+}
+
+/* 标题使用无衬线字体 */
+h1, h2, h3, h4, h5, h6 {
+  font-family:
+    "PingFang SC",
+    "Heiti SC",
+    "Microsoft YaHei",
+    "WenQuanYi Micro Hei",
+    "Noto Sans CJK SC",
+    sans-serif;
+}
+
+/* 代码等宽字体栈 */
+code, pre, pre code {
+  font-family:
+    "SF Mono",
+    "Menlo",
+    "Monaco",
+    "Cascadia Code",
+    "Courier New",
+    "PingFang SC",
+    monospace;
+}
+
+/* ---------- 字号体系 (基于 10.5pt = 五号字) ---------- */
+
+/* 标题字号 */
+.display-xl { font-size: 42pt; line-height: 1.2; }  /* 封面书名 */
+.display-lg { font-size: 28pt; line-height: 1.3; }  /* 封面副标题 */
+.display-md { font-size: 22pt; line-height: 1.35; } /* H1 章标题 */
+.display-sm { font-size: 16pt; line-height: 1.4; }  /* H2 节标题 */
+.display-xs { font-size: 13pt; line-height: 1.45; } /* H3 小节 */
+
+/* 正文字号 */
+.text-base { font-size: 10.5pt; line-height: 1.8; }  /* 正文五号 */
+.text-sm   { font-size: 9pt; line-height: 1.6; }     /* 注释/小字 */
+.text-xs   { font-size: 7.5pt; line-height: 1.5; }   /* 版权信息 */
+
+/* ---------- 行高优化 ---------- */
+
+.book-container p {
+  line-height: 1.85;
+  /* 中文排版推荐行高：字号的 1.5-2 倍 */
+}
+
+.book-container li {
+  line-height: 1.7;
+}
+
+/* ---------- 字间距与段落 ---------- */
+
+.book-container {
+  /* 中文不需要字母间距 */
+  letter-spacing: normal;
+
+  /* 两端对齐，优先按 ideograph 规则 */
+  text-align: justify;
+  text-justify: inter-ideograph;
+
+  /* 禁用西文连字符 */
+  hyphens: none;
+
+  /* 禁用自动首字下沉 */
+  hanging-punctuation: allow-end;
+
+  /* 标点挤压 */
+  text-spacing: ideograph-alpha ideograph-numeric;
+}
+
+/* ---------- 中文标点优化 ---------- */
+
+.book-container {
+  /* 全角标点处理 */
+  hanging-punctuation: first last;
+}
+
+/* 书名号、引号等不拆开 */
+.book-container q,
+.book-container cite {
+  white-space: nowrap;
+}
+
+/* ---------- 表格排版 ---------- */
+
+.book-container table {
+  font-size: 9pt;
+  line-height: 1.5;
+}
+
+.book-container th,
+.book-container td {
+  padding: 8px 12px;
+  text-align: left;
+}
+
+/* ---------- 脚注/尾注 ---------- */
+
+.book-container .footnote {
+  font-size: 8.5pt;
+  line-height: 1.5;
+  color: #666;
+  border-top: 1px solid #ddd;
+  margin-top: 20pt;
+  padding-top: 8pt;
+}
+
+/* ---------- 页码样式 ---------- */
+
+.book-container .page-number {
+  font-size: 9pt;
+  color: #999;
+  text-align: center;
+}

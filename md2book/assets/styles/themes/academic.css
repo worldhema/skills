@@ -1,0 +1,123 @@
+/* =====================================================
+   Theme: Academic - 经典学术风
+   经典衬线字体、暖色纸张质感、稳重专业
+   ===================================================== */
+
+:root {
+  /* 配色 - 暖色调 */
+  --accent-color: #8b0000;
+  --text-color: #2c2c2c;
+  --border-color: #d4c5b0;
+  --bg-color: #fdfbf7;
+
+  /* 链接 */
+  --link-color: #8b0000;
+
+  /* 强调 */
+  --emphasis-color: #1a1a1a;
+
+  /* 代码 */
+  --code-bg: #f5f0e8;
+  --code-text: #8b0000;
+  --code-block-bg: #2c2416;
+  --code-block-header-bg: #3d3225;
+  --code-block-text: #e8dcc8;
+
+  /* 表格 */
+  --table-header-bg: #f5f0e8;
+  --table-stripe-bg: #faf7f2;
+  --table-hover-bg: #f0ebe2;
+
+  /* 引用 */
+  --blockquote-bg: #f7f3ec;
+  --blockquote-text: #5a4e3f;
+
+  /* Callout */
+  --callout-info-bg: #f0f0f5;
+  --callout-tip-bg: #f2f7ef;
+  --callout-warning-bg: #fdf5e8;
+  --callout-danger-bg: #fdf0ef;
+}
+
+/* 封面学术设计 */
+.cover-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fdfbf7 0%, #f5f0e8 100%);
+  padding: 60px 40px;
+  border: 2px solid #8b0000;
+  margin: 20px;
+}
+
+.cover-title {
+  font-size: 32pt;
+  font-weight: 700;
+  color: #2c2c2c;
+  text-align: center;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.cover-subtitle {
+  font-size: 14pt;
+  font-weight: 400;
+  color: #5a4e3f;
+  text-align: center;
+  margin-bottom: 36px;
+  font-style: italic;
+}
+
+.cover-divider {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #8b0000, transparent);
+  margin: 0 auto 36px;
+}
+
+.cover-author {
+  font-size: 11pt;
+  color: #5a4e3f;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.cover-date {
+  font-size: 9pt;
+  color: #999;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* H1 学术风格 */
+.book-container h1 {
+  border-top: 2px solid #8b0000;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* H2 学术风格 */
+.book-container h2 {
+  border-bottom: 1px solid #d4c5b0;
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+/* 脚注样式 */
+.book-container .footnote {
+  font-size: 8.5pt;
+  line-height: 1.5;
+  color: #5a4e3f;
+}
+
+/* 页脚样式 */
+.book-container .page-footer {
+  font-size: 8pt;
+  color: #999;
+  text-align: center;
+  border-top: 1px solid #d4c5b0;
+  padding-top: 8pt;
+  margin-top: 24pt;
+}
