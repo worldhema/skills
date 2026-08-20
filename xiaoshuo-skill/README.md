@@ -34,12 +34,12 @@ rm -rf .git && git init -b main
 | 技能 | 位置 | 职责 |
 |------|------|------|
 | 主技能 | `.claude/skills/novel-chapter/` | 全流程编排 7 步 |
-| 子1 资料整理 | `.claude/skills/novel-prep/` | 前文/人物状态/伏笔梳理 |
+| 子1 资料整理 | `.claude/skills/novel-prep/` | 前文/人物状态/时间锚点/伏笔梳理 |
 | 子2 剧情推演 | `.claude/skills/novel-outline/` | 本章冲突与转折规划 |
 | 子3 正文生成 | `.claude/skills/novel-write/` | 约 2000 字去 AI 味正文 |
 | 子4 合规审查 | `.claude/skills/novel-review/` | OOC/矛盾/违禁/张力检查 |
 | 子5 内容打磨 | `.claude/skills/novel-polish/` | 润色与钩子优化 |
-| 子6 故事线更新 | `.claude/skills/novel-track/` | 伏笔/人物状态同步 |
+| 子6 故事线更新 | `.claude/skills/novel-track/` | 伏笔/人物状态/时间线同步 |
 | 子7 版本备份 | `.claude/skills/novel-backup/` | git 每章 commit |
 | 灵感 | `.claude/skills/novel-method/` | 冲突/英雄之旅/写作手法灵感 |
 | 自动化 | `.claude/skills/novel-scan/` | 每日备份+合规扫描 |
@@ -52,7 +52,7 @@ rm -rf .git && git init -b main
 ├── CLAUDE.md              # 主技能总控（5阶段/7步/强制规则/git约定）
 ├── 01-大纲细纲/           # 全书大纲、分卷细纲、章节细纲
 ├── 02-正文存稿/           # 定稿正文：第XXX章-标题.md
-├── 03-设定文档/           # 世界/人物/风格/伏笔/红线/敏感词
+├── 03-设定文档/           # 世界/时间线/人物/番外小传/风格/伏笔/红线/敏感词
 ├── 04-技能配置/           # 9 技能详细说明书
 └── 05-版本备份/           # git 版本说明 + 里程碑记录
 ```
